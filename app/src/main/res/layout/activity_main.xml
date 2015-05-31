@@ -1,0 +1,37 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff86d7e8">
+
+    <FrameLayout
+        android:id="@+id/contentFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="start">
+
+        <ListView
+            android:id="@+id/listaalumnos"
+            android:layout_width="200dp"
+            android:background="#ff28beff"
+
+            android:layout_height="wrap_content"></ListView>
+
+        <ListView
+            android:id="@+id/listaOpciones"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:textColor="#424242"
+
+            android:choiceMode="singleChoice"
+            android:dividerHeight="2dp"
+            android:background="#424242"></ListView>
+    </LinearLayout>
+
+
+</android.support.v4.widget.DrawerLayout>

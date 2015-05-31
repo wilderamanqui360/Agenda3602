@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.empresa.agenda360">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Agregado para Google Identity Toolkit -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_action_cloud"
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Agregado para Google Identity Toolkit -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="19952864195-tn4oreb44okm97pes35e7dr296s7u00k.apps.googleusercontent.com" />
+
+                <!-- Un-comment the following data tag and replace placeholder. -->
+                <!--
+                    data
+                    android:host="gitkit"
+                    android:scheme="INSERT_REVERSED_SERVER_CLIENT_ID" /
+                -->
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".receiver.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.example.empresa.agenda360" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".service.GcmIntentService" />
+
+        <!-- Agregado para Google Identity Toolkit -->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="identitytoolkit.show_providers"
+            android:value="Google, Yahoo, Facebook" />
+        <meta-data
+            android:name="identitytoolkit.use_google_plus"
+            android:value="false" />
+
+        <!-- Un-comment the following 3 meta-data tags and replace placeholder with the real value -->
+        <meta-data
+            android:name="identitytoolkit.api_key"
+            android:value="AIzaSyCbjLjqdUDjYHy5tw1VLqWChzK5kMnr2VI" />
+        <meta-data
+            android:name="identitytoolkit.server_client_id"
+            android:value="19952864195-tn4oreb44okm97pes35e7dr296s7u00k.apps.googleusercontent.com" />
+        <meta-data
+            android:name="identitytoolkit.server_widget_url"
+            android:value="https://localhost/callback" />
+
+        <!--para facebook-->
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id"/>
+        <activity android:name="com.facebook.LoginActivity"/>
+
+        <!-- Agregado para Google Identity Toolkit -->
+        <activity
+            android:name=".MainActivity2Activity"
+            android:label="@string/app_name">
+
+        </activity>
+    </application>
+
+</manifest>

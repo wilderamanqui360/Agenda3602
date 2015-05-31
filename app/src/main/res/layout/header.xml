@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="llamarhistorico">
+
+    <ImageView
+        android:id="@+id/imgOpcion"
+        android:layout_alignParentLeft="true"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_margin="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/profile1" />
+    <TextView
+        android:id="@+id/txtOpcion"
+        android:gravity="center"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgOpcion"
+        android:text="Matias" />
+
+    <ImageView
+        android:id="@+id/imgOpcion2"
+android:layout_margin="2dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/imgOpcion"
+        android:scaleType="fitXY"
+        android:src="@drawable/ninna1" />
+
+    <TextView
+        android:id="@+id/txtOpcion2"
+        android:layout_alignEnd="@+id/txtOpcion"
+        android:layout_alignBottom="@+id/imgOpcion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Susana" />
+</RelativeLayout>

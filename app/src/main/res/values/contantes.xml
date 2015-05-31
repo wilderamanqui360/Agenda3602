@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="SRV_LISTA_ALUMNOS_BASICO">1</integer>
+    <integer name="SRV_GET_NOTIFICACIONES">2</integer>
+    <integer name="SRV_ALUMNO_BASICO">3</integer>
+</resources>
+
